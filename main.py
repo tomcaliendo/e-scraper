@@ -304,6 +304,11 @@ def parse_domain(domain:str, regex_emails, regex_robots, regex_href, headers:dic
     
   f.close()
   print(f'[+] Extracted {len(domain_emails)} emails from {domain}')
+  with open(f'{domain}_internal_pages.txt', 'w') as f:  # Line 73
+            for link in links:  # Line 79
+                print(f'[+] {link}')  # Print the URL to the terminal  # Line 80
+                f.write(f'{link}\n')  # Write each URL to the text file  # Line 81
+
   
   return True
 
